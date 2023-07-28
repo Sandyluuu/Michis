@@ -1,0 +1,25 @@
+<div id="<%= dom_id post %>" class="card" style="">
+  <%= image_tag post.image, class:'image ' %>
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %> </h5>
+    <p class="card-text">
+  
+  <p>
+    <strong>Description:</strong>
+    <%= post.description %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= post.user.email %>
+  </p></p>
+  </div>
+
+  <div class="card-body">
+    <%= link_to "New post", new_post_path, class:"card-link" %>
+    <%= link_to "Show this post", post, class:'card-link' %>
+  </div>
+</div>
+
+
+
