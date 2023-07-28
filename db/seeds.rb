@@ -30,7 +30,7 @@ end
 30.times do
   title = Faker::Lorem.sentence
   description = Faker::Lorem.paragraph
-  image_url = "https://picsum.photos/200/300/?random=#{Faker::Number.unique.number(digits: 5)}"
+  image_url = Faker::LoremFlickr.image(size:"300x200", search_terms: ['cat'])
 
   user = User.all.sample
 

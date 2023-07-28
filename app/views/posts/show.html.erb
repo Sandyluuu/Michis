@@ -4,10 +4,7 @@
 
 <div>
   <%= link_to "Back to posts", posts_path %>
-    <% if user_signed_in? %>
-      <% if current_user.id == @post.user_id %>
-        <%= link_to "Edit this post", edit_post_path(@post) %> |
-        <%= button_to "Destroy this post", @post, method: :delete %>
-      <% end %>
+    <% Post::Kinds.each do |kind| %>
+      <%= button_to "#{Post::KindsSpanish[kind]}", new_user_reaction_path(post_id: @post.id, reaction_type:"article", kind: kind), method: :post %>
     <% end %>
-</div
+</div>

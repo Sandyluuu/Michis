@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'pages/home'
   get 'pages/terms'
 
+  post '/new_user_reaction', to: 'reactions#new_user_reaction', as:'new_user_reaction'
+
   # Ruta raiz
   root 'pages#home'
 end
