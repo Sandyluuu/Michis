@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: %i[:index, :show]
 
@@ -11,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+     @posts = Post.all
   end
 
   # GET /posts/1 or /posts/1.json
@@ -76,4 +77,9 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:image, :title, :description, :user_id)
     end
+
+    def show
+      @comment = Comment.new
+      end
+
 end

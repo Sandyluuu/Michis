@@ -1,9 +1,12 @@
 <!-- Página de bienvenida -->
 <div class="welcome-page">
-    <%=image_tag 'loguito', id:'loguito'%>
-  <h1>Bienvenido a <strong>TheRialNews</strong></h1>
-  <p>Tu fuente para las mejores Noticias 😉</p>
 
+    <br>
+  <h1>Bienvenid@ a los <strong>Michi.Lovers</strong></h1>
+  <p>La página perfecta para mostrar tu amor por los Michis 😻</p>
+
+  <%=image_tag 'loguito.jpg', id:'loguito'%>
+    <br>
   <div class="cta-buttons">
     <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
     <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary" %>

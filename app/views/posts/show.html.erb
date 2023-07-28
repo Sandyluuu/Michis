@@ -5,6 +5,8 @@
 <div>
   <%= link_to "Back to posts", posts_path %>
     <% Post::Kinds.each do |kind| %>
-      <%= button_to "#{Post::KindsSpanish[kind]}", new_user_reaction_path(post_id: @post.id, reaction_type:"article", kind: kind), method: :post %>
+      <%= button_to "#{Post::KindsSpanish[kind]}", new_user_reaction_path(post_id: @post.id, reaction_type:"post", kind: kind), method: :post %>
     <% end %>
 </div>
+
+<%= render 'comments/form' %>

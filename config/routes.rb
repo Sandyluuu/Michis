@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post '/new_user_reaction', to: 'reactions#new_user_reaction', as:'new_user_reaction'
 
+  resources :comments, only: [:create]
+
   # Ruta raiz
   root 'pages#home'
 end

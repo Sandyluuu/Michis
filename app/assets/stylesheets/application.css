@@ -13,6 +13,21 @@
  *= require_tree .
  *= require_self
  */
+body {
+   background-image: url('/assets/Cat-Wallpaper.png');
+
+}
+
+.navbar {
+   color:white;
+   background-image: linear-gradient(to right, #f1d4e3, #b842d0);
+}
+   
+
+.container {
+   padding-top: 60px;
+}
+
 .image {
    width: 200px ;
    margin: 10px auto;
@@ -20,12 +35,19 @@
 }
 
 #loguito {
-   width: 150px;
-   margin: 20px auto;
+   width: 90px;
    display:block;
 
 }
 
 .card {
    margin-top: 20px;
+}
+
+.welcome-page {
+   text-align: center; 
+   display: flex;
+   justify-content: center; 
+   align-items: center;
+   height: 100vh; 
 }

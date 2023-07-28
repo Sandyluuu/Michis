@@ -6,7 +6,7 @@ devise :database_authenticatable, :registerable,
 :recoverable, :rememberable, :validatable
 has_many :reactions
 has_many :comments
-has_many :articles, through: :reaction
+has_many :posts, through: :reactions
 
   enum :role, [:normal_user, :author, :admin]
 
