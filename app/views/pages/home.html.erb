@@ -1,14 +1,15 @@
-<!-- Página de bienvenida -->
-<div class="welcome-page">
-
-    <br>
+<!-- bienvenida -->
+<div class="welcome-page text-center">
+  <br>
   <h1>Bienvenid@ a los <strong>Michi.Lovers</strong></h1>
   <p>La página perfecta para mostrar tu amor por los Michis 😻</p>
 
-  <%=image_tag 'loguito.jpg', id:'loguito'%>
-    <br>
-  <div class="cta-buttons">
-    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
-    <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary" %>
+  <%= image_tag 'loguito.jpg', id: 'loguito', class: 'img-fluid rounded-circle mt-4' %>
+  <br>
+
+  <div class="cta-buttons mt-4">
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg mr-3" %>
+    <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary btn-lg" %>
   </div>
 </div>
+

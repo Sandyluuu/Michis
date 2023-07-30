@@ -1,31 +1,23 @@
 <div id="<%= dom_id post %>" class="card">
- <div class='row'> 
-    <div class='col-6'>
-       <p>
-    <strong>User:</strong>
-      <%= post.user.email %>
-    </p></p>
-      <%= image_tag post.image, class:'image ' %>
+  <div class='row'> 
+      <div class='col-6'>
+        <p>
+        <strong>User:</strong>
+          <%= post.user.name %>
+        </p>
+        <%= image_tag post.image, class:'image ' %>
+      </div>
 
-      
-    </div>
-
-    <div class='col-6'>
-      <div class="card-body">
-    <h5 class="card-title"><%= post.title %> </h5>
-    <p class="card-text">
-  
-  <p>
-    <strong>Description:</strong>
-    <%= post.description %>
-  </p>
-
-
+      <div class='col-6'>
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %> </h5>
+            <p class="card-text"> 
+              <strong>Description:</strong>
+              <%= post.description %>
+            </p>
+        </div>
+      </div>
   </div>
-    </div>
- </div>
-
-
 
   <div class="card-body">
     <%= link_to "New post", new_post_path, class:"card-link" %>

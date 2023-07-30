@@ -8,7 +8,11 @@
 # db/seeds.rb
 
 # db/seeds.rb
+# Crear un usuario administrador
+
+#Para ponerme a mi misma admin
 User.create!(
+    name: 'Sandy',
     email: 'sandra14_lu@hotmail.com',
     password: '123456',
     role: 2
@@ -17,10 +21,12 @@ User.create!(
 require 'faker'
 
 10.times do
+  name = Faker::Name.name
   email = Faker::Internet.email
   password = Faker::Internet.password
 
   User.create!(
+    name: name,
     email: email,
     password: password,
     role: rand(0..2)
@@ -40,10 +46,18 @@ end
     image: image_url,
     user_id: user.id
   )
-
-  # until Comment.count == 100 do
-  #   Comment.create(content: Faker::Lorem.paragraph_by_chars(number: 100,
-  #   supplemental: false), post_id: post.sample.id, user_id:
-  #   users.sample.id)
-  #   end
 end
+
+puts 'comentarios'
+posts = Post.all
+users = User.all
+until Comment.count == 100 do
+  Comment.create(
+    content: Faker::Lorem.paragraph_by_chars(number: 200, supplemental: false),
+    post_id: posts.sample.id,
+    user_id: users.sample.id
+  )
+end
+ 
+
+

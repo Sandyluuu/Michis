@@ -1,32 +1,31 @@
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container-fluid">
-        <%= image_tag 'loguito.jpg', class: 'navbar-brand', id:'loguito' %>       
+    <%= link_to image_tag('loguito.jpg', id: 'loguito', class: 'navbar-brand'), root_path %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2">
-
-        <li class="nav-item">
-            <%= link_to 'Publica Aquí', new_post_path, class:'nav-link' %>        
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Editar Perfil', edit_user_registration_path, class:'nav-link' %>
-        </li>
-       
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Publica Aquí', new_post_path, class: 'nav-link' %>        
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Editar Perfil', edit_user_registration_path, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Iniciar Sesión', new_user_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Registrarse', new_user_registration_path, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
-      <%= button_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
+      <% if user_signed_in? %>
+        <%= button_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+      <% end %>
     </div>
   </div>
-</nav>
-
-
- <nav>
-  <ul>
-    <% if user_signed_in? %>
-    <p> HOLA! <strong><%= current_user.email %></strong> </p>
-    <% end %>
-</ul>
-
 </nav>

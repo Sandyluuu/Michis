@@ -20,13 +20,13 @@ body {
 
 .navbar {
    color:white;
-   background-image: linear-gradient(to right, #f1d4e3, #b842d0);
+   background-image: linear-gradient(to right, #f9e5ef, #ca8cd6);
    font-family: 'Josefin Sans', sans-serif;
 }
    
 
 .container {
-   padding-top: 60px;
+   padding-top: 100px;
    font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -37,8 +37,9 @@ body {
 }
 
 #loguito {
-   width: 90px;
+   width: 80px;
    display:block;
+   border-radius: 50%;
 
 }
 
