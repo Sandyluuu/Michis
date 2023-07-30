@@ -5,8 +5,17 @@
 <div>
   <%= link_to "Back to posts", posts_path %>
     <% Post::Kinds.each do |kind| %>
-      <%= button_to "#{Post::KindsSpanish[kind]}", new_user_reaction_path(post_id: @post.id, reaction_type:"post", kind: kind), method: :post %>
+      <%= button_to "#{Post::KindsMoji[kind]}", new_user_reaction_path(post_id: @post.id, reaction_type:"post", kind: kind), method: :post %>
     <% end %>
+    <div class="row">
+    <% @post.reactions.group(:kind).count.each do |reaction, count| %>
+      
+        <div class="col-1">
+          <%= count %> <%= "#{Post::KindsMoji[reaction]}" %>
+        </div>
+    <% end %>
+    </div>
+
 </div>
 
 <%= render 'comments/form' %>

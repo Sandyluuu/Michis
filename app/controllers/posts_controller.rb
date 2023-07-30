@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
+    @reaction_counts = @post.reactions.group(:kind).count
   end
 
   # GET /posts/new
@@ -83,6 +84,8 @@ class PostsController < ApplicationController
     def show
       @post = Post.find(params[:id])
       @comment = Comment.new
+      @reaction_counts = @post.reactions.group(:kind).count
+
       end
 
 end

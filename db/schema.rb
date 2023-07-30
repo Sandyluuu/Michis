@@ -39,10 +39,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_28_032002) do
     t.bigint "user_id", null: false
     t.string "kind"
     t.string "reaction_type"
-    t.bigint "comment_id", null: false
+    # t.bigint "comment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["comment_id"], name: "index_reactions_on_comment_id"
+    # t.index ["comment_id"], name: "index_reactions_on_comment_id"
     t.index ["post_id"], name: "index_reactions_on_post_id"
     t.index ["user_id"], name: "index_reactions_on_user_id"
   end
@@ -65,7 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_28_032002) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "users"
-  add_foreign_key "reactions", "comments"
+  #add_foreign_key "reactions", "comments"
   add_foreign_key "reactions", "posts"
   add_foreign_key "reactions", "users"
 end

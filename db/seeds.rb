@@ -58,6 +58,14 @@ until Comment.count == 100 do
     user_id: users.sample.id
   )
 end
- 
+
+puts 'Reacciones'
+r_type = %w[post]
+kinds = Post::Kinds
+until Reaction.count == 100 do
+  rel_type = r_type.sample
+Reaction.create(post_id: posts.sample.id, user_id: users.sample.id, kind: kinds.sample, reaction_type: rel_type)
+end
+
 
 
