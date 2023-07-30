@@ -4,11 +4,11 @@ Michi.Lovers es una aplicación web para Catlovers, con el fin de que muestren s
 
 ## Visuales 🐈
 
-![Alt text](image.png)
+![Alt text](image-5.png)
 
 ---
 
-![Alt text](image-1.png)
+![Alt text](image-4.png)
 
 ## Empezando 🚀
 
@@ -100,7 +100,7 @@ Este proyecto utiliza Git para el versionado.
 
 ## Autores ✒️
 
-[Sandra Campos Galeas](https://github.com/Sandyluuu)
+[Sandra Campos Galeas](https://github.com/Sandyluuu) 😼
 
 ## Expresiones de Gratitud 🎁
 

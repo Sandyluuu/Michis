@@ -1,29 +1,25 @@
 <div id="<%= dom_id post %>" class="card">
-  <div class='row'> 
-      <div class='col-6'>
-        <p>
-        <strong>User:</strong>
-          <%= post.user.name %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %> </h5>
+        <p class="card-text">
+          <strong>User:</strong> <%= post.user.name %>
         </p>
-        <%= image_tag post.image, class:'image ' %>
+        <%= image_tag post.image, class: 'image img-fluid' %>
       </div>
+    </div>
 
-      <div class='col-6'>
-        <div class="card-body">
-          <h5 class="card-title"><%= post.title %> </h5>
-            <p class="card-text"> 
-              <strong>Description:</strong>
-              <%= post.description %>
-            </p>
-        </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <p class="card-text">
+          <strong>Description:</strong> <%= post.description %>
+        </p>
+        <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
+        <%= link_to "Show this post", post, class: "btn btn-secondary" %>
       </div>
-  </div>
-
-  <div class="card-body">
-    <%= link_to "New post", new_post_path, class:"card-link" %>
-    <%= link_to "Show this post", post, class:'card-link' %>
+    </div>
   </div>
 </div>
-
 
 

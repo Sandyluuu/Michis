@@ -1,35 +1,46 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
+<div class="card mb-4">
+  <div class="card-body">
+    <%= render @post %>
+  </div>
+</div>
 
-<div>
-  <%= link_to "Back to posts", posts_path %>
-    <% Post::Kinds.each do |kind| %>
-      <%= button_to "#{Post::KindsMoji[kind]}", new_user_reaction_path(post_id: @post.id, reaction_type:"post", kind: kind), method: :post %>
-    <% end %>
-    <div class="row">
-    <% @post.reactions.group(:kind).count.each do |reaction, count| %>
-      
-        <div class="col-1">
-          <%= count %> <%= "#{Post::KindsMoji[reaction]}" %>
-        </div>
-    <% end %>
+<div class="text-center">
+  <%= link_to "Back to posts", posts_path, class: "btn btn-secondary" %>
+</div>
+
+<div class="row mt-4">
+  <div class="col-12">
+    <div class="btn-group" role="group">
+      <% Post::Kinds.each do |kind| %>
+        <%= button_to "#{Post::KindsMoji[kind]}", new_user_reaction_path(post_id: @post.id, reaction_type: "post", kind: kind), method: :post, class: "btn btn-outline-primary" %>
+      <% end %>
     </div>
+  </div>
+</div>
 
+<div class="row mt-2">
+  <% @post.reactions.group(:kind).count.each do |reaction, count| %>
+    <div class="col-1">
+      <%= count %> <%= "#{Post::KindsMoji[reaction]}" %>
+    </div>
+  <% end %>
 </div>
 
 <%= render 'comments/form' %>
-          <p>
-            <% if @post.comments.any? %>
-               <h4>Comments:</h4>
-                  <ul>
-                      <% @post.comments.each do |comment| %>
-                    <li>
-                      <strong><%= comment.user.name %>:</strong> <%= comment.content %>
-                    </li>
-            <% end %>
-                  </ul>
-            <% else %>
-               <p>No comments yet.</p>
-            <% end %>
-          </p>
+
+<div class="mt-4">
+  <% if @post.comments.any? %>
+    <h4>Comments:</h4>
+    <ul class="list-group">
+      <% @post.comments.each do |comment| %>
+        <li class="list-group-item">
+          <strong><%= comment.user.name %>:</strong> <%= comment.content %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No comments yet.</p>
+  <% end %>
+</div>
