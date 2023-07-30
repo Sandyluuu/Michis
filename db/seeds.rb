@@ -40,4 +40,10 @@ end
     image: image_url,
     user_id: user.id
   )
+
+  # until Comment.count == 100 do
+  #   Comment.create(content: Faker::Lorem.paragraph_by_chars(number: 100,
+  #   supplemental: false), post_id: post.sample.id, user_id:
+  #   users.sample.id)
+  #   end
 end

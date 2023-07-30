@@ -15,17 +15,19 @@
  */
 body {
    background-image: url('/assets/Cat-Wallpaper.png');
-
+   
 }
 
 .navbar {
    color:white;
    background-image: linear-gradient(to right, #f1d4e3, #b842d0);
+   font-family: 'Josefin Sans', sans-serif;
 }
    
 
 .container {
    padding-top: 60px;
+   font-family: 'Josefin Sans', sans-serif;
 }
 
 .image {
@@ -42,6 +44,10 @@ body {
 
 .card {
    margin-top: 20px;
+}
+
+.card-body {
+   background-image: linear-gradient(to right, #ffffff, #cef3f3);
 }
 
 .welcome-page {
